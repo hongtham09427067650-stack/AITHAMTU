@@ -3,12 +3,10 @@ import streamlit as st
 from google import genai  
 from google.genai import types  # Nạp thêm thư viện cấu hình  
   
-# DÁN API KEY CỦA BẠN VÀO ĐÂY  
-API_KEY = "AQ.Ab8RN6LevJN4SRZLyV4IbfFGGn2xaN-aS8pfuCF8F0OuseAvLg"  
-  
-# Khởi tạo client nằm ngoài để tránh bị chạy lại liên tục  
-if "client" not in st.session_state:  
-  st.session_state.client = genai.Client(api_key=API_KEY)  
+# KHÔNG DÁN KEY TRỰC TIẾP VÀO ĐÂY NỮA ĐỂ TRÁNH BỊ GOOGLE KHÓA
+# Khởi tạo client nằm ngoài để tránh bị chạy lại liên tục
+if "client" not in st.session_state:
+    st.session_state.client = genai.Client() # <--- Để trống ngoặc, nó sẽ tự tìm trong Secrets của Streamlit  
   
 st.set_page_config(  
     page_title="AI Thám tử lịch sử",  
