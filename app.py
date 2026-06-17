@@ -4,11 +4,11 @@ from google import genai
 from google.genai import types  # Nạp thêm thư viện cấu hình  
   
 # DÁN API KEY CỦA BẠN VÀO ĐÂY  
-API_KEY = "AQ.Ab8RN6Ku69y26RNdDJtspj_Iq29Rejrns_5ubyUrcoHvvIND9w"  
+API_KEY = "AQ.Ab8RN6LevJN4SRZLyV4IbfFGGn2xaN-aS8pfuCF8F0OuseAvLg"  
   
 # Khởi tạo client nằm ngoài để tránh bị chạy lại liên tục  
 if "client" not in st.session_state:  
-    st.session_state.client = genai.Client(api_key=API_KEY)  
+  st.session_state.client = genai.Client(api_key=API_KEY)  
   
 st.set_page_config(  
     page_title="AI Thám tử lịch sử",  
